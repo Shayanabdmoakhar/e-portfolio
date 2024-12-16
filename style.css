@@ -1,0 +1,452 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    margin:0;
+}
+h5,h3 {
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+  }
+  p{
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+:root{
+    --light:rgb(190, 190, 190);
+    --light-white:white;
+    --dark-mode: #090446;
+    --contact-boxes: #795548;
+    --nav-background: #F7DCB9;
+    --light-mode-back:#B99470;
+    --buttons:#3d2d01;
+    --hr-line:#ff0000;
+}
+html{
+background-color: var(--dark-mode);
+}
+
+/* removed the blank space on the right side of the screen */
+.row {
+ --bs-gutter-x: 0;
+}
+/* navbar on top of everything but the radio buttons */
+#navigation{
+z-index: 10;
+background-color: var(--nav-background);
+}
+/* ligh mode radio button icons color */
+.mode-label .bi-sun{
+    color:gold;  
+}
+.mode-label .bi-moon-stars{
+   color: var(--light);
+}
+/* humburger style */
+@media screen and (max-width:575px) {
+    .nav-link{
+        width: 30%;
+        margin: auto;
+    }
+}
+/* adding a list icon to the humburger manually and sytling  */
+.navbar-toggler-icon {
+    font-size: 2rem;
+    background-image: none;
+    color: var(--light-white);
+}
+
+/* my picture size */
+#myPhoto img{
+    width: 20rem;
+    height: 20rem;
+}
+
+#hero .text-shadow-light{
+transition: 0.5s  0.5s;
+animation: nameColor 2s 0.5s infinite linear;
+}
+@keyframes nameColor{
+    0%{color: var(--light-mode-back);}
+    100%{color: var(--light-white);}
+}
+
+/* hover effects for the cards light mode */
+.card:hover{
+    cursor: pointer;
+    background: rgb(36,25,25);
+    background: linear-gradient(90deg, rgba(36,25,25,1) 15%, rgba(79,57,4,1) 100%, rgba(10,129,150,1) 100%);
+    color: var(--light-white);
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    padding: 5%;
+}
+/* hover effects for  buttons light mode */
+.btn:hover{
+    background: rgb(36,25,25);
+    background: linear-gradient(90deg, rgba(36,25,25,1) 15%, rgba(79,57,4,1) 100%, rgba(10,129,150,1) 100%);
+    color:var(--light-white);
+    font-weight: bold;
+    transition: all 0.5s linear;
+}
+/* hover effects in contact columns  */
+.contact-columns:hover{
+    background: rgb(36,25,25);
+    background: linear-gradient(90deg, rgba(36,25,25,1) 0%, rgba(192,137,3,1) 100%);
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    transform: translate(10%);
+    animation: contactMeLight 0.75s linear 0.75s;
+}
+@keyframes contactMeLight{
+    0%{transform: translate(10%);}
+}
+/* item lists div space from the brand */
+.navbar-expand-sm .navbar-collapse {
+    justify-content: end;
+}
+
+#light-dark-modes{
+    z-index: 11;
+}
+/* light/dark modes */
+.mode-label:hover{
+    cursor: pointer;
+}
+/* light mode background */
+input#radio-button:checked ~ main {
+    background-color:var(--light-mode-back);
+    color:var(--light-white);
+}
+/* nav back ground color changes to dark when dark mode selected */
+input#radio-button2:checked ~ main nav{
+    background-color:var(--dark-mode);
+    color: var(--light);
+}
+/* change the nav bar items text color when dark mode is selected */
+input#radio-button2:checked ~  main .navbar-expand-sm .navbar-nav .nav-link {
+    color: var(--light);
+}
+input#radio-button2:checked ~ main #hero{
+    background-color:var(--dark-mode);
+    color: var(--light);
+}
+input#radio-button2:checked ~ main #about{
+    background-color:var(--dark-mode);
+    color: var(--light);
+}
+input#radio-button2:checked ~ main #resume{
+    background-color:var(--dark-mode);
+    color: var(--light);
+}
+input#radio-button2:checked ~ main #portfolio{
+    background-color:var(--dark-mode);
+    color: var(--light);
+}
+input#radio-button2:checked ~ main #contact{
+    background-color:var(--dark-mode);
+    color: var(--light);
+}
+input#radio-button2:checked ~ main #footer{
+    background-color:var(--dark-mode);
+    color: var(--light);
+}
+/* ul items background color change when hovered dark mode */
+input#radio-button2:checked ~ main nav ul a:hover {
+    background: rgb(0,58,26);
+    background: linear-gradient(90deg, rgba(0,58,26,1) 0%, rgba(0,58,26,1) 0%, rgba(13,183,19,1) 100%, rgba(10,129,150,1) 100%);
+    border-radius: 8px;
+    color: var(--dark-mode);
+    transition: all 0.3s ease-in-out;
+}
+/* ul items background color change when hovered light mode */
+input#radio-button:checked ~ main nav ul a:hover {
+    background-color:var(--light-mode-back);
+    color:var(--light-white);
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+}
+/* hover effect on the resume button dark mode */
+input#radio-button2:checked ~ main .btn:hover {
+    background: rgb(0,58,26);
+    background: linear-gradient(90deg, rgba(0,58,26,1) 0%, rgba(0,58,26,1) 0%, rgba(13,183,19,1) 100%, rgba(10,129,150,1) 100%);    
+    color: var(--light);
+    font-weight: bold;
+    cursor: pointer;
+    border: solid rgb(83, 33, 40) 2px;
+    transition: all 0.3s ease-in-out;
+}
+input#radio-button2:checked ~ main .card:hover {
+    background: rgb(0,58,26);
+    background: linear-gradient(90deg, rgba(0,58,26,1) 0%, rgba(0,58,26,1) 0%, rgba(13,183,19,1) 100%, rgba(10,129,150,1) 100%);    
+    color: var(--light);
+    font-weight: bold;
+    cursor: pointer;
+    border: solid black 2px;
+    transition: all 0.3s ease-in-out;
+    padding: 10px;
+}
+
+input#radio-button2:checked ~ main .contact-columns {
+    background-color: var(--dark-mode);
+}
+/* hover effect for contact info dark mode */
+input#radio-button2:checked ~ main .contact-columns:hover {
+    background: rgb(0,58,26);
+    background: linear-gradient(90deg, rgba(0,58,26,1) 0%, rgba(0,58,26,1) 0%, rgba(13,183,19,1) 100%, rgba(10,129,150,1) 100%);    
+    color: var(--light);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    transform-origin: bottom;
+    animation: contactMe 1s linear 1s;
+    transform: translateX(-10%);
+}
+@keyframes contactMe{
+    0%{transform: translateX(-10%) rotate(0deg);}
+}
+
+input#radio-button2:checked ~ main #touch{
+    animation: touch-dark 2s  0.5s infinite linear;
+}
+@keyframes touch-dark{
+    0%{color:var(--dark-mode);}
+    100%{color:var(--light)}
+}
+/* dark mode buttons icons color */
+input#radio-button2:checked ~ main .bi-sun {
+    color: var(--light);
+    padding: 5%;
+}
+input#radio-button2:checked ~ main .bi-moon-stars {
+    color: tomato;
+    padding: 5%;
+}
+/* back ground bars on dark mode */
+input#radio-button2:checked ~ main .bar-color{
+        background-color: var(--dark-mode);
+        border: solid 2px;
+        box-shadow: -1px 1px rgb(58 255 44);
+    }
+
+input#radio-button2:checked ~ main #light-dark-modes{
+    background: rgb(36,25,25);
+    background: linear-gradient(90deg, rgba(36,25,25,1) 7%, rgba(16,79,42,1) 100%); 
+}
+
+/* upon changing to dark mode the photo will moves to right and back to its original place */
+input#radio-button2:checked ~ main #myPhoto img{
+    animation: myPhoto 0.75s linear 0.1s;
+
+}
+@keyframes myPhoto{
+    0%   {margin-left: 0%;}
+    25%  {margin-left: 25%; }
+    50%  {margin-left: 50%;}
+    75%  {margin-left:75%;}
+    100% {margin-left: 100%; margin-right: 100%;}
+}
+/* upon changing to light mode the photo will moves to right and back to its original place */
+input#radio-button:checked ~ main #myPhoto{
+    animation: myPhotoLight 0.75s linear 0.1s;
+}
+@keyframes myPhotoLight{
+    0%   {margin-left: 0%;}
+  25%  {margin-left: 25%;}
+  50%  {margin-left: 50%;}
+  75%  {margin-left:75%;}
+  100% {margin-left: 100%;}
+}
+
+/* hiding the radio buttons */
+input[name="page-theme"]{
+    display: none;
+}
+
+.navbar-brand{
+    animation: brand 4s linear infinite;
+}
+/* the brand keeps turninng on and off on dark and white and dark on light */
+@keyframes brand{
+    0%   {color:#ffffff;}
+  25%  {color:#c7bebe }
+  50%  {color:#727273}
+  75%  {color:#0a0a0a}
+  100% {color:rgb(0, 0, 0);}
+
+}
+
+/* making the hero full height so this section is only shown  */
+#hero{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* about section */
+#about{
+    width: 100%;
+    min-height: 400px;
+}
+/* creating space for progress bar from the edges */
+#resume{
+    padding: 2%;
+}
+.res-shake {
+    animation: resumeMove 2s linear infinite;
+}
+@keyframes resumeMove{
+    0%{transform: translateX(-3%);}
+    100%{transform: translateX(3%);}
+}
+/* centering the contents inside the container */
+.container{
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.container h1{
+    text-align: center;
+    color: var(--light);
+}
+
+
+ /* button sytle */
+ .btn{
+    background-color:var(--buttons);
+    width: 200px;
+    margin: auto;
+    box-shadow: -3px 4px var(--dark-mode);
+ }
+
+ /* contact */
+ /* centering the submit button */
+ #contact{
+    text-align: center;
+    padding-top: 20px;
+ }
+ /* centring the social media cotact box columns  */
+ .contact-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ /* removing the anchor underlines */
+a{
+    text-decoration: none;
+    color: var(--contact);
+}
+.contact-columns{
+    border-radius: 8px;
+    box-shadow: 5px 5px black;
+    background-color: var(--contact-boxes);
+}
+.contact-columns .email {
+    margin-right: 35%;
+}
+/* drawing a line between sections */
+hr{
+font-weight: 900;
+color: var(--hr-line);
+border: solid 2px;
+}
+/* footer */
+.d-flex{
+    justify-content: space-around;
+}  
+/* box shodow to cards */
+.card{
+    box-shadow: -4px 2px rgb(93, 80, 80);
+}
+/* making a circle behind the ligh/dark mode icons */
+#light-dark-modes{
+    background: rgb(36,25,25);
+    background: linear-gradient(90deg, rgba(36,25,25,1) 0%, rgba(192,137,3,1) 100%);
+    width: 45px;
+    border-radius: 50%;
+    margin-top: 7px;
+    height: 45px;
+}
+
+/* styling my photo  */
+#myPhoto img{
+    border-radius: 50%;
+}
+/* positioning the card skills  */
+#resume .row .container {
+    padding: 2% 10%;
+}
+
+/* changing the toggler background coolor */
+.bg-secondary {
+    background-color: #B99470 !important;
+}
+
+/* styling the bars and their hover effects */
+#bars{
+    display: flex;
+    flex-direction: column;
+}
+/* giving a different background color to the outer div */
+.bar-outer-box{
+    background-color: var(--light);
+}
+
+/* animation for the bar hover */
+#touch{
+    animation: touch-me 2s  infinite  linear;
+}
+@keyframes touch-me{
+    0%{color: var(--contact-boxes);}
+    100%{color: var(--light-wx  hite);}
+}
+.bar-color{
+    height: 50px;
+    width: 50px;
+    background-color: var(--contact-boxes);
+    box-shadow: -1px 1px #FF9800;
+}
+.bar0:hover{
+    transition: width 1.5s;
+    width: 90%;
+    cursor: pointer;
+}
+.bar1:hover{
+    transition: width 1.5s;
+    width: 90%;
+    cursor: pointer;
+}
+.bar2:hover{
+    transition: width 1.5s;
+    width: 80%;
+    cursor: pointer;
+}
+.bar3:hover{
+    transition: width 1.5s;
+    width: 50%;
+    cursor: pointer;
+}
+.bar4:hover{
+    transition: width 1.5s;
+    width: 40%;
+    cursor: pointer;
+ }
+
+ /* footer img hover effect */
+
+#footer div i:hover{
+   font-size: large;
+    color: #727273;
+
+}
